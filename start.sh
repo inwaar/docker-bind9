@@ -37,6 +37,7 @@ zone "${BIND9_ROOTDOMAIN}" {
        type master;
        file "/etc/bind/zones/db.${BIND9_ROOTDOMAIN}";
        allow-update { key "${BIND9_KEYNAME}"; } ;
+       allow-transfer { key "${BIND9_KEYNAME}"; };
 };
 EOF
   echo "Creating ${BIND9_ROOTDOMAIN} configuration"
